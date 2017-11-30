@@ -12,4 +12,8 @@ attr_reader :board
     board.update_field(field, shape)
   end
 
+  def check_results
+    board.check_results
+  end
+
 end

@@ -10,6 +10,7 @@ RSpec.describe 'A game' do
 
   before :each do
     allow(board).to receive(:update_field).with(field, shape)
+    allow(board).to receive(:check_results)
   end
 
   it 'is created with a board' do
@@ -19,6 +20,11 @@ RSpec.describe 'A game' do
   it 'has an update_field method' do
     expect(board).to receive(:update_field)
     game.update_field(field, shape)
+  end
+
+  it 'has a check_results method' do
+    expect(board).to receive(:check_results)
+    game.check_results
   end
 
 end
