@@ -16,4 +16,8 @@ attr_reader :board
     board.check_results
   end
 
+  def game_over?
+    check_results.all?
+  end
+
 end

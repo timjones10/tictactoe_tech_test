@@ -27,4 +27,9 @@ RSpec.describe 'A game' do
     game.check_results
   end
 
+  it 'knows when game is over' do
+    allow(board).to receive(:check_results).and_return(["X", "X", "X", "X", "X", "X", "X", "X", "X"])
+    expect(game.game_over?).to be true
+  end
+
 end
