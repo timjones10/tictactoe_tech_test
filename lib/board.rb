@@ -17,6 +17,10 @@ class Board
     grid[field-1].content = shape
   end
 
+  def check_results
+    grid.map {|field| field.content}
+  end
+
   private
 
   def create_grid(size, field)

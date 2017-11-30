@@ -20,4 +20,9 @@ RSpec.describe 'A board' do
     expect(board.grid[2].content).to eq 'X'
   end
 
+  it 'has a check_results method which strips field contents to an array' do
+    board.update_field(3, 'X')
+    expect(board.check_results).to eq [nil, nil, "X", nil, nil, nil, nil, nil, nil]
+  end
+
 end
