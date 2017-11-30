@@ -1,11 +1,13 @@
 require_relative 'board'
+require_relative 'outcomes'
 
 class Game
 
-attr_reader :board
+attr_reader :board, :outcomes
 
-  def initialize(board)
+  def initialize(board, outcomes)
     @board = board
+    @outcomes = outcomes
   end
 
   def update_field(field, shape)
@@ -18,6 +20,10 @@ attr_reader :board
 
   def game_over?
     check_results.all?
+  end
+
+  def win?
+    outcomes.check(board.check_results)
   end
 
 end

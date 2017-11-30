@@ -4,9 +4,11 @@ RSpec.describe 'A game' do
 
   let (:field) {double :field}
   let (:board) {double :board, field: field }
-  let(:game) {Game.new(board)}
+  let (:outcomes) {double :outcomes}
+  let(:game) {Game.new(board, outcomes)}
   index = 3
   shape = 'X'
+  results = ["X", "X", "X", "X", "X", "X", "X", "X", "X"]
 
   before :each do
     allow(board).to receive(:update_field).with(field, shape)
@@ -22,14 +24,20 @@ RSpec.describe 'A game' do
     game.update_field(field, shape)
   end
 
-  it 'has a check_results method' do
+  it '#check_results gets the results from the board' do
     expect(board).to receive(:check_results)
     game.check_results
   end
 
-  it 'knows when game is over' do
-    allow(board).to receive(:check_results).and_return(["X", "X", "X", "X", "X", "X", "X", "X", "X"])
+  it '#game_over? knows when game is over' do
+    allow(board).to receive(:check_results).and_return(results)
     expect(game.game_over?).to be true
+  end
+
+  it '#win? checks whether the game has been won' do
+    allow(board).to receive(:check_results).and_return(results)
+    allow(outcomes).to receive(:check).with(results).and_return(true)
+    expect(game.win?).to be true
   end
 
 end
