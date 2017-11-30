@@ -15,4 +15,9 @@ RSpec.describe 'A board' do
     expect(board.size).to eq 3
   end
 
+  it 'has an update_field method' do
+    board.update_field(3, 'X')
+    expect(board.grid[2].content).to eq 'X'
+  end
+
 end

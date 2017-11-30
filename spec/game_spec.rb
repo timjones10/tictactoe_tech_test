@@ -6,9 +6,10 @@ RSpec.describe 'A game' do
   let (:board) {double :board, field: field }
   let(:game) {Game.new(board)}
   index = 3
+  shape = 'X'
 
   before :each do
-    allow(board).to receive(:update_field).with(index)
+    allow(board).to receive(:update_field).with(field, shape)
   end
 
   it 'is created with a board' do
@@ -17,7 +18,7 @@ RSpec.describe 'A game' do
 
   it 'has an update_field method' do
     expect(board).to receive(:update_field)
-    game.update_field(index)
+    game.update_field(field, shape)
   end
 
 end

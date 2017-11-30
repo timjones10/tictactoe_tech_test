@@ -13,6 +13,10 @@ class Board
     create_grid(size, field)
   end
 
+  def update_field(field, shape)
+    grid[field-1].content = shape
+  end
+
   private
 
   def create_grid(size, field)

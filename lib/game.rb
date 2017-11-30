@@ -1,3 +1,5 @@
+require_relative 'board'
+
 class Game
 
 attr_reader :board
@@ -6,8 +8,8 @@ attr_reader :board
     @board = board
   end
 
-  def update_field(index)
-    board.update_field(index)
+  def update_field(field, shape)
+    board.update_field(field, shape)
   end
 
 end
