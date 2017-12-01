@@ -26,4 +26,8 @@ attr_reader :board, :outcomes
     outcomes.check(board.check_results)
   end
 
+  def display
+    board.display(board.check_results)
+  end
+
 end

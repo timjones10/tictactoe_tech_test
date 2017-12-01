@@ -1,5 +1,4 @@
 class Outcomes
-
   def check(results)
     return 'win' if results[0] == 'X' && results[1] == 'X' && results[2] == 'X'
     return 'win' if results[0] == '0' && results[1] == '0' && results[2] == '0'
@@ -18,16 +17,4 @@ class Outcomes
     return 'win' if results[2] == 'X' && results[4] == 'X' && results[6] == 'X'
     return 'win' if results[2] == '0' && results[4] == '0' && results[6] == '0'
   end
-
-  end
-
-  #
-  # 4,5,6
-  # 7,8,9
-  #
-  # 1,4,7
-  # 2,5,8
-  # 3,6,9
-  #
-  # 1,5,9
-  # 3,5,7
+end

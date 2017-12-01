@@ -40,4 +40,9 @@ RSpec.describe 'A game' do
     expect(game.win?).to eq 'win'
   end
 
+  it '#display displays the board' do
+    expect(board).to receive(:display)
+    game.display
+  end
+
 end
