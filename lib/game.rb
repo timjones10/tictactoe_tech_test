@@ -9,6 +9,16 @@ attr_reader :board, :outcomes
   def initialize(board, outcomes)
     @board = board
     @outcomes = outcomes
+    @player1 = []
+    @player2 = []
+  end
+
+  def get_player_names
+    puts 'Player 1 - Enter your name'
+    @player1 = gets.chomp
+    puts 'Player 2 - Enter your name'
+    @player2 = gets.chomp
+    "#{@player1[0]} is X and goes first"
   end
 
   def update_field(field, shape)

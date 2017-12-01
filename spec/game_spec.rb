@@ -45,4 +45,9 @@ RSpec.describe 'A game' do
     game.display
   end
 
+  it '#get_player_names method gets player names on initialisation' do
+    expect(game).to receive(:get_player_names)
+    game.get_player_names
+  end
+
 end
