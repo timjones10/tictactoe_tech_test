@@ -36,8 +36,8 @@ RSpec.describe 'A game' do
 
   it '#win? checks whether the game has been won' do
     allow(board).to receive(:check_results).and_return(results)
-    allow(outcomes).to receive(:check).with(results).and_return(true)
-    expect(game.win?).to be true
+    allow(outcomes).to receive(:check).with(results).and_return('win')
+    expect(game.win?).to eq 'win'
   end
 
 end
