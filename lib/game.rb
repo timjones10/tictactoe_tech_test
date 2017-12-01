@@ -1,3 +1,4 @@
+require_relative 'field'
 require_relative 'board'
 require_relative 'outcomes'
 
@@ -27,7 +28,7 @@ attr_reader :board, :outcomes
   end
 
   def display
-    board.display(board.check_results)
+    puts board.display(board.check_results)
   end
 
 end

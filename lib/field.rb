@@ -2,8 +2,8 @@ class Field
 
 attr_accessor :content
 
-def inititalize
-@content = content
-end
+  def inititalize
+  @content = '_'
+  end
 
 end

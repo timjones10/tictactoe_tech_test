@@ -33,7 +33,7 @@ class Board
   end
 
   def get_display_string(results)
-    "\n#{results[0]} | #{results[1]} | #{results[2]}\n_________\n#{results[3]} | #{results[4]} | #{results[5]}\n_________\n#{results[6]} | #{results[7]} | #{results[8]}\n"
+    "\n#{results[0]} | #{results[1]} | #{results[2]}\n#{results[3]} | #{results[4]} | #{results[5]}\n#{results[6]} | #{results[7]} | #{results[8]}\n"
   end
 
 end

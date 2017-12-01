@@ -26,7 +26,7 @@ RSpec.describe 'A board' do
   end
 
   it '#display formats the board and puts to the command line' do
-    expect(board.display(results)).to eq "\nX | 0 | X\n_________\n0 | X | 0\n_________\nX | 0 | X\n"
+    expect(board.display(results)).to eq "\nX | 0 | X\n0 | X | 0\nX | 0 | X\n"
   end
 
 end
