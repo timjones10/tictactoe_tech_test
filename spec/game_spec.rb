@@ -45,9 +45,9 @@ RSpec.describe 'A game' do
     game.display
   end
 
-  it '#get_player_names method gets player names on initialisation' do
-    expect(game).to receive(:get_player_names)
-    game.get_player_names
+  it '#update_player_names method gets player names on initialisation' do
+    expect(game).to receive(:update_player_names).with('Tim')
+    game.update_player_names('Tim')
   end
 
 end

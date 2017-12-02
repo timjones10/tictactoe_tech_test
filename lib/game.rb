@@ -4,21 +4,20 @@ require_relative 'outcomes'
 
 class Game
 
-attr_reader :board, :outcomes
+attr_reader :board, :outcomes, :current_turn
 
   def initialize(board, outcomes)
     @board = board
     @outcomes = outcomes
     @player1 = ''
     @player2 = ''
+    @current_turn = 1
   end
 
-  def get_player_names
-    puts 'Player 1 - Enter your name'
-    @player1 = gets.chomp
-    puts 'Player 2 - Enter your name'
-    @player2 = gets.chomp
-    "#{@player1} is X and goes first"
+  def update_player_names(name)
+    @player1 = gets.chomp if current_turn == 1
+    @player2 = gets.chomp if current_turn == 2
+    current_turn == 1 ? @current_turn = 2 : @current_turn = 1
   end
 
   def update_field(field, shape)
@@ -39,6 +38,17 @@ attr_reader :board, :outcomes
 
   def display
     puts board.display(check_results)
+  end
+
+  private
+
+  def game_over
+    puts "Game Over" if game_over? == true
+  end
+
+  def game_won
+     puts "#{@player1} won" if win? == true && current_turn == 1
+     puts "#{@player2} won" if win? == true && current_turn == 2
   end
 
 end
