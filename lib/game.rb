@@ -15,8 +15,8 @@ attr_reader :board, :outcomes, :current_turn
   end
 
   def update_player_names(name)
-    @player1 = gets.chomp if current_turn == 1
-    @player2 = gets.chomp if current_turn == 2
+    @player1 = name if current_turn == 1
+    @player2 = name if current_turn == 2
     current_turn == 1 ? @current_turn = 2 : @current_turn = 1
   end
 
@@ -39,8 +39,6 @@ attr_reader :board, :outcomes, :current_turn
   def display
     puts board.display(check_results)
   end
-
-  private
 
   def game_over
     puts "Game Over" if game_over? == true
