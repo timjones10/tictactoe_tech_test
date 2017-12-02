@@ -20,22 +20,22 @@ RSpec.describe 'Outcomes Checker' do
   win_results_16 = [nil,nil,'0',nil,'0',nil,'0',nil,nil]
 
   it "#check method examines results & returns win" do
-    expect(outcomes.check(win_results)).to eq 'win'
-    expect(outcomes.check(win_results_2)).to eq 'win'
-    expect(outcomes.check(win_results_3)).to eq 'win'
-    expect(outcomes.check(win_results_4)).to eq 'win'
-    expect(outcomes.check(win_results_5)).to eq 'win'
-    expect(outcomes.check(win_results_6)).to eq 'win'
-    expect(outcomes.check(win_results_7)).to eq 'win'
-    expect(outcomes.check(win_results_8)).to eq 'win'
-    expect(outcomes.check(win_results_9)).to eq 'win'
-    expect(outcomes.check(win_results_10)).to eq 'win'
-    expect(outcomes.check(win_results_11)).to eq 'win'
-    expect(outcomes.check(win_results_12)).to eq 'win'
-    expect(outcomes.check(win_results_13)).to eq 'win'
-    expect(outcomes.check(win_results_14)).to eq 'win'
-    expect(outcomes.check(win_results_15)).to eq 'win'
-    expect(outcomes.check(win_results_16)).to eq 'win'
+    expect(outcomes.check(win_results)).to be true
+    expect(outcomes.check(win_results_2)).to be true
+    expect(outcomes.check(win_results_3)).to be true
+    expect(outcomes.check(win_results_4)).to be true
+    expect(outcomes.check(win_results_5)).to be true
+    expect(outcomes.check(win_results_6)).to be true
+    expect(outcomes.check(win_results_7)).to be true
+    expect(outcomes.check(win_results_8)).to be true
+    expect(outcomes.check(win_results_9)).to be true
+    expect(outcomes.check(win_results_10)).to be true
+    expect(outcomes.check(win_results_11)).to be true
+    expect(outcomes.check(win_results_12)).to be true
+    expect(outcomes.check(win_results_13)).to be true
+    expect(outcomes.check(win_results_14)).to be true
+    expect(outcomes.check(win_results_15)).to be true
+    expect(outcomes.check(win_results_16)).to be true
   end
 
 end
