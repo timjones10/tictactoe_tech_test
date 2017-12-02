@@ -9,8 +9,8 @@ attr_reader :board, :outcomes
   def initialize(board, outcomes)
     @board = board
     @outcomes = outcomes
-    @player1 = []
-    @player2 = []
+    @player1 = ''
+    @player2 = ''
   end
 
   def get_player_names
@@ -18,7 +18,7 @@ attr_reader :board, :outcomes
     @player1 = gets.chomp
     puts 'Player 2 - Enter your name'
     @player2 = gets.chomp
-    "#{@player1[0]} is X and goes first"
+    "#{@player1} is X and goes first"
   end
 
   def update_field(field, shape)
@@ -30,15 +30,15 @@ attr_reader :board, :outcomes
   end
 
   def game_over?
-    check_results.all?
+    check_results.all? {|shape| shape == 'X' || shape == '0'}
   end
 
   def win?
-    outcomes.check(board.check_results)
+    outcomes.check(check_results)
   end
 
   def display
-    puts board.display(board.check_results)
+    puts board.display(check_results)
   end
 
 end

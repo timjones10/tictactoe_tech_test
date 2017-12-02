@@ -7,14 +7,13 @@ class Board
   attr_reader :grid, :size
 
   def initialize(field, size = DEFAULT_SIZE)
-    @grid = []
+    @grid = (size * size).times.collect{field.new}
     @field = field
     @size = size
-    create_grid(size, field)
   end
 
   def update_field(field, shape)
-    grid[field-1].content = shape
+    grid[field-1].update_content(shape)
   end
 
   def check_results
@@ -26,11 +25,6 @@ class Board
   end
 
   private
-
-  def create_grid(size, field)
-    square = size * size
-    square.times {grid.push field.new}
-  end
 
   def get_display_string(results)
     "\n#{results[0]} | #{results[1]} | #{results[2]}\n#{results[3]} | #{results[4]} | #{results[5]}\n#{results[6]} | #{results[7]} | #{results[8]}\n"

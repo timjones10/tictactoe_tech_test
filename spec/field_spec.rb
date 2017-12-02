@@ -4,9 +4,9 @@ RSpec.describe 'A field' do
 
   let(:field) {Field.new}
 
-  it 'has content which can be set to X or O' do
-    field.content= '0'
-    expect(field.content).to eq '0'
+  it '#update_content changes the value of content' do
+    field.update_content('X')
+    expect(field.content).to eq 'X'
   end
 
 end

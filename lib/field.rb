@@ -1,9 +1,13 @@
 class Field
 
-attr_accessor :content
+attr_reader :content
 
-  def inititalize
-  @content = '_'
+  def initialize(content = '_')
+    @content = content
+  end
+
+  def update_content(content)
+    @content = content
   end
 
 end

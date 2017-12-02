@@ -22,7 +22,7 @@ RSpec.describe 'A board' do
 
   it 'has a check_results method which strips field contents to an array' do
     board.update_field(3, 'X')
-    expect(board.check_results).to eq [nil, nil, "X", nil, nil, nil, nil, nil, nil]
+    expect(board.check_results).to eq ['_', '_', "X", '_', '_', '_', '_', '_', '_']
   end
 
   it '#display formats the board and puts to the command line' do
